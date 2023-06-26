@@ -1,5 +1,7 @@
 import 'package:download_file/data/models/download_file_options.dart';
+import 'package:download_file/logic/cubit/download_file_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class DownloadFileDialog extends StatelessWidget {
   final DownloadFileOptions downloadFileOptions;
@@ -10,6 +12,22 @@ class DownloadFileDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return BlocProvider(
+      create: (_) => DownloadFileCubit(
+        downloadFileOptions: downloadFileOptions,
+      ),
+      child: const AlertDialog(
+        // Column is used to not make the [AlertDialog] full height
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Padding(
+              padding: EdgeInsets.all(15.0),
+              child: CircularProgressIndicator(),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
