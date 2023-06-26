@@ -2,6 +2,10 @@ async
 2.18
 file:///Users/marcomusiol/.pub-cache/hosted/pub.dev/async-2.11.0/
 file:///Users/marcomusiol/.pub-cache/hosted/pub.dev/async-2.11.0/lib/
+bloc
+2.12
+file:///Users/marcomusiol/.pub-cache/hosted/pub.dev/bloc-8.1.2/
+file:///Users/marcomusiol/.pub-cache/hosted/pub.dev/bloc-8.1.2/lib/
 boolean_selector
 2.17
 file:///Users/marcomusiol/.pub-cache/hosted/pub.dev/boolean_selector-2.1.1/
@@ -34,6 +38,10 @@ file
 2.12
 file:///Users/marcomusiol/.pub-cache/hosted/pub.dev/file-6.1.4/
 file:///Users/marcomusiol/.pub-cache/hosted/pub.dev/file-6.1.4/lib/
+flutter_bloc
+2.12
+file:///Users/marcomusiol/.pub-cache/hosted/pub.dev/flutter_bloc-8.1.3/
+file:///Users/marcomusiol/.pub-cache/hosted/pub.dev/flutter_bloc-8.1.3/lib/
 flutter_lints
 2.17
 file:///Users/marcomusiol/.pub-cache/hosted/pub.dev/flutter_lints-2.0.1/
@@ -62,6 +70,10 @@ meta
 2.12
 file:///Users/marcomusiol/.pub-cache/hosted/pub.dev/meta-1.9.1/
 file:///Users/marcomusiol/.pub-cache/hosted/pub.dev/meta-1.9.1/lib/
+nested
+2.12
+file:///Users/marcomusiol/.pub-cache/hosted/pub.dev/nested-1.0.0/
+file:///Users/marcomusiol/.pub-cache/hosted/pub.dev/nested-1.0.0/lib/
 open_filex
 2.17
 file:///Users/marcomusiol/.pub-cache/hosted/pub.dev/open_filex-4.3.2/
@@ -106,6 +118,10 @@ process
 2.14
 file:///Users/marcomusiol/.pub-cache/hosted/pub.dev/process-4.2.4/
 file:///Users/marcomusiol/.pub-cache/hosted/pub.dev/process-4.2.4/lib/
+provider
+2.12
+file:///Users/marcomusiol/.pub-cache/hosted/pub.dev/provider-6.0.5/
+file:///Users/marcomusiol/.pub-cache/hosted/pub.dev/provider-6.0.5/lib/
 source_span
 2.14
 file:///Users/marcomusiol/.pub-cache/hosted/pub.dev/source_span-1.9.1/

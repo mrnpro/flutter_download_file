@@ -8,6 +8,12 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "bloc",
+      "rootUri": "file:///Users/marcomusiol/.pub-cache/hosted/pub.dev/bloc-8.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "boolean_selector",
       "rootUri": "file:///Users/marcomusiol/.pub-cache/hosted/pub.dev/boolean_selector-2.1.1",
       "packageUri": "lib/",
@@ -62,6 +68,12 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "flutter_bloc",
+      "rootUri": "file:///Users/marcomusiol/.pub-cache/hosted/pub.dev/flutter_bloc-8.1.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter_lints",
       "rootUri": "file:///Users/marcomusiol/.pub-cache/hosted/pub.dev/flutter_lints-2.0.1",
       "packageUri": "lib/",
@@ -106,6 +118,12 @@
     {
       "name": "meta",
       "rootUri": "file:///Users/marcomusiol/.pub-cache/hosted/pub.dev/meta-1.9.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "nested",
+      "rootUri": "file:///Users/marcomusiol/.pub-cache/hosted/pub.dev/nested-1.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -174,6 +192,12 @@
       "rootUri": "file:///Users/marcomusiol/.pub-cache/hosted/pub.dev/process-4.2.4",
       "packageUri": "lib/",
       "languageVersion": "2.14"
+    },
+    {
+      "name": "provider",
+      "rootUri": "file:///Users/marcomusiol/.pub-cache/hosted/pub.dev/provider-6.0.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "sky_engine",
@@ -248,7 +272,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-06-26T19:04:09.475712Z",
+  "generated": "2023-06-26T19:16:06.472190Z",
   "generator": "pub",
   "generatorVersion": "3.0.5"
 }
