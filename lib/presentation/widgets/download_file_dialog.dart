@@ -16,16 +16,27 @@ class DownloadFileDialog extends StatelessWidget {
       create: (_) => DownloadFileCubit(
         downloadFileOptions: downloadFileOptions,
       ),
-      child: const AlertDialog(
-        // Column is used to not make the [AlertDialog] full height
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Padding(
-              padding: EdgeInsets.all(15.0),
-              child: CircularProgressIndicator(),
-            ),
-          ],
+      child: BlocListener<DownloadFileCubit, DownloadFileState>(
+        listener: (context, state) {
+          if (state is DownloadFileError) {
+            // TODO: show error toast
+          }
+
+          if (state is DownloadFileError || state is DownloadFileSuccess) {
+            Navigator.pop(context);
+          }
+        },
+        child: const AlertDialog(
+          // Column is used to not make the [AlertDialog] full height
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Padding(
+                padding: EdgeInsets.all(15.0),
+                child: CircularProgressIndicator(),
+              ),
+            ],
+          ),
         ),
       ),
     );
