@@ -18,7 +18,7 @@ class DownloadFileRepository {
         await getApplicationDocumentsDirectory();
 
     final String completeSavePath =
-        '$applicationDocumentsDirectory/${downloadFileOptions.getSavePath}';
+        '${applicationDocumentsDirectory.path}/${downloadFileOptions.getSavePath}';
 
     await _downloadFileApi.downloadFile(
       downloadUrl: downloadFileOptions.downloadUrl,

@@ -19,10 +19,11 @@ class DownloadFileDialog extends StatelessWidget {
       child: BlocListener<DownloadFileCubit, DownloadFileState>(
         listener: (context, state) {
           if (state is DownloadFileError) {
-            // TODO: show error toast
+            // TODO: show error message
+            Navigator.pop(context);
           }
 
-          if (state is DownloadFileError || state is DownloadFileSuccess) {
+          if (state is DownloadFileSuccess) {
             Navigator.pop(context);
           }
         },
