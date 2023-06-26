@@ -1,6 +1,8 @@
 library download_file;
 
 import 'package:download_file/data/models/download_file_options.dart';
+import 'package:download_file/presentation/widgets/download_file_dialog.dart';
+import 'package:flutter/material.dart';
 
 class DownloadFile {
   /// Download the file from the given [downloadUrl]
@@ -11,5 +13,13 @@ class DownloadFile {
   /// subfolder. You can use "documents/images" here.
   static Future<void> downloadAndSafeFile({
     required DownloadFileOptions downloadFileOptions,
-  }) async {}
+    required BuildContext context,
+  }) async {
+    showDialog(
+      context: context,
+      builder: (_) => DownloadFileDialog(
+        downloadFileOptions: downloadFileOptions,
+      ),
+    );
+  }
 }
