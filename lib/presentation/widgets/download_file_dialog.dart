@@ -5,9 +5,16 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class DownloadFileDialog extends StatelessWidget {
   final DownloadFileOptions downloadFileOptions;
+
+  /// The widget that is displaying while the download is loading
+  ///
+  /// If no one is passed it's using the default one
+  final Widget? loadingWidget;
+
   const DownloadFileDialog({
     super.key,
     required this.downloadFileOptions,
+    this.loadingWidget,
   });
 
   @override
@@ -27,15 +34,16 @@ class DownloadFileDialog extends StatelessWidget {
             Navigator.pop(context);
           }
         },
-        child: const AlertDialog(
+        child: AlertDialog(
           // Column is used to not make the [AlertDialog] full height
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Padding(
-                padding: EdgeInsets.all(15.0),
-                child: CircularProgressIndicator(),
-              ),
+              loadingWidget ??
+                  const Padding(
+                    padding: EdgeInsets.all(15.0),
+                    child: CircularProgressIndicator(),
+                  ),
             ],
           ),
         ),
