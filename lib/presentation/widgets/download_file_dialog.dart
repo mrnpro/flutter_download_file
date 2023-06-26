@@ -11,10 +11,16 @@ class DownloadFileDialog extends StatelessWidget {
   /// If no one is passed it's using the default one
   final Widget? loadingWidget;
 
+  /// This [String] is displayed if an error occurs
+  ///
+  /// If no text is passed it will use the default one
+  final String? errorMessage;
+
   const DownloadFileDialog({
     super.key,
     required this.downloadFileOptions,
     this.loadingWidget,
+    this.errorMessage,
   });
 
   @override
@@ -27,9 +33,9 @@ class DownloadFileDialog extends StatelessWidget {
         listener: (context, state) {
           if (state is DownloadFileError) {
             ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
+              SnackBar(
                 content: Text(
-                  'An error occurred during the download',
+                  errorMessage ?? 'An error occurred during the download',
                 ),
               ),
             );
