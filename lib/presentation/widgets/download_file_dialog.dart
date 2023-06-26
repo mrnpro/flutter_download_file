@@ -26,7 +26,13 @@ class DownloadFileDialog extends StatelessWidget {
       child: BlocListener<DownloadFileCubit, DownloadFileState>(
         listener: (context, state) {
           if (state is DownloadFileError) {
-            // TODO: show error message
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text(
+                  'An error occurred during the download',
+                ),
+              ),
+            );
             Navigator.pop(context);
           }
 
