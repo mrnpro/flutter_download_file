@@ -1,6 +1,8 @@
 package io.flutter.plugins;
 
 import io.flutter.plugin.common.PluginRegistry;
+import com.crazecoder.openfile.OpenFilePlugin;
+import io.flutter.plugins.pathprovider.PathProviderPlugin;
 
 /**
  * Generated file. Do not edit.
@@ -10,6 +12,8 @@ public final class GeneratedPluginRegistrant {
     if (alreadyRegisteredWith(registry)) {
       return;
     }
+    OpenFilePlugin.registerWith(registry.registrarFor("com.crazecoder.openfile.OpenFilePlugin"));
+    PathProviderPlugin.registerWith(registry.registrarFor("io.flutter.plugins.pathprovider.PathProviderPlugin"));
   }
 
   private static boolean alreadyRegisteredWith(PluginRegistry registry) {
