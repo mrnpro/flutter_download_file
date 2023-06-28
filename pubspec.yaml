@@ -1,7 +1,8 @@
 name: download_file
 description: A new Flutter package project.
 version: 0.0.1
-homepage:
+homepage: https://github.com/musiolmarco/flutter_download_file
+repository: https://github.com/musiolmarco/flutter_download_file
 
 environment:
   sdk: '>=3.0.5 <4.0.0'

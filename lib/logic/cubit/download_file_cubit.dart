@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:bloc/bloc.dart';
 import 'package:download_file/data/models/download_file_options.dart';
 import 'package:download_file/data/repositories/download_file_repository.dart';
@@ -19,7 +21,7 @@ class DownloadFileCubit extends Cubit<DownloadFileState> {
     emit(DownloadFileLoading());
 
     try {
-      _downloadFileRepository.downloadAndOpenFile(
+      await _downloadFileRepository.downloadAndOpenFile(
         downloadFileOptions: downloadFileOptions,
       );
 
