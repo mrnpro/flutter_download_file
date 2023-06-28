@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:bloc/bloc.dart';
 import 'package:download_file/data/models/download_file_options.dart';
 import 'package:download_file/data/repositories/download_file_repository.dart';
