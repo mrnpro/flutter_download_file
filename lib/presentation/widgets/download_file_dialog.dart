@@ -6,6 +6,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class DownloadFileDialog extends StatelessWidget {
   final DownloadFileOptions downloadFileOptions;
 
+  /// The default loading [Widget] that is used if the [loadingWidget] is null
+  static Widget _defaultLoadingWidget = const Padding(
+    padding: EdgeInsets.all(15.0),
+    child: CircularProgressIndicator(),
+  );
+
+  /// The default error message that is used if the [errorMessage] is null
+  static String _defaultErrorMessage = 'An error occurred during the download';
+
   /// The widget that is displaying while the download is loading
   ///
   /// If no one is passed it's using the default one
@@ -30,6 +39,22 @@ class DownloadFileDialog extends StatelessWidget {
     this.customDialogContent,
   });
 
+  /// Setup the default values of this dialog class
+  ///
+  /// If a value is passed and not null, it will write it default class content
+  static void setup({
+    Widget? defaultLoadingWidget,
+    String? defaultErrorMessage,
+  }) {
+    if (defaultLoadingWidget != null) {
+      _defaultLoadingWidget = defaultLoadingWidget;
+    }
+
+    if (defaultErrorMessage != null) {
+      _defaultErrorMessage = defaultErrorMessage;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -42,7 +67,7 @@ class DownloadFileDialog extends StatelessWidget {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 content: Text(
-                  errorMessage ?? 'An error occurred during the download',
+                  errorMessage ?? _defaultErrorMessage,
                 ),
               ),
             );
@@ -58,12 +83,7 @@ class DownloadFileDialog extends StatelessWidget {
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              customDialogContent ??
-                  loadingWidget ??
-                  const Padding(
-                    padding: EdgeInsets.all(15.0),
-                    child: CircularProgressIndicator(),
-                  ),
+              customDialogContent ?? loadingWidget ?? _defaultLoadingWidget
             ],
           ),
         ),

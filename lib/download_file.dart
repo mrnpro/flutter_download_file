@@ -5,6 +5,17 @@ import 'package:download_file/presentation/widgets/download_file_dialog.dart';
 import 'package:flutter/material.dart';
 
 class DownloadFile {
+  /// Setup method that will setup default values for the [DownloadFileDialog]
+  static void setup({
+    Widget? defaultLoadingWidget,
+    String? defaultErrorMessage,
+  }) {
+    DownloadFileDialog.setup(
+      defaultErrorMessage: defaultErrorMessage,
+      defaultLoadingWidget: defaultLoadingWidget,
+    );
+  }
+
   /// Download the file from the given [downloadUrl]
   ///
   /// The [fileName] is the name how the file gets saved. For example "image.png"
