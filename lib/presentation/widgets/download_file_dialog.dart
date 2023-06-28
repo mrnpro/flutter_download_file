@@ -11,6 +11,12 @@ class DownloadFileDialog extends StatelessWidget {
   /// If no one is passed it's using the default one
   final Widget? loadingWidget;
 
+  /// This widget will replace the complete [AlertDialog] content
+  ///
+  /// If you pass this [Widget] you don't need to pass a custom [loadingWidget],
+  /// because everything will be overwritten by this anyway
+  final Widget? customDialogContent;
+
   /// This [String] is displayed if an error occurs
   ///
   /// If no text is passed it will use the default one
@@ -21,6 +27,7 @@ class DownloadFileDialog extends StatelessWidget {
     required this.downloadFileOptions,
     this.loadingWidget,
     this.errorMessage,
+    this.customDialogContent,
   });
 
   @override
@@ -51,7 +58,8 @@ class DownloadFileDialog extends StatelessWidget {
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              loadingWidget ??
+              customDialogContent ??
+                  loadingWidget ??
                   const Padding(
                     padding: EdgeInsets.all(15.0),
                     child: CircularProgressIndicator(),
