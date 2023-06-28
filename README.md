@@ -1,39 +1,26 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+Need to download a file and open it in Flutter?🌐
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+No problem, with this flutter package it is done in a few lines.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
-
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
+# Getting started 🚀
+Just simply add the `download_file` package to your dependencies:
+```yaml
+dependencies:
+  download_file: <Newest version>
 ```
 
-## Additional information
+## Download a file ⬇️
+```dart
+DownloadFile.downloadAndSafeFile(
+              downloadFileOptions: DownloadFileOptions(
+                downloadUrl: 'https://jsonplaceholder.typicode.com/todos/1',
+                fileName: 'todo.json',
+              ),
+              context: context,
+            );
+```
+To download a file just use the `DownlaodFile.downloadAndSafeFile()` method.
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+<img src="https://github.com/musiolmarco/error_text_widget/assets/64715619/55fa2692-f759-48dc-9684-9db33c4fb421" width="300">
+
+Of course there is a lot of things you can customize. Let us take a look at it.
