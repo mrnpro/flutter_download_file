@@ -31,11 +31,15 @@ class DownloadFileDialog extends StatelessWidget {
   /// If no text is passed it will use the default one
   final String? errorMessage;
 
+  /// Pass [logging] as true to show the logs for the performed request
+  final bool? logging;
+
   const DownloadFileDialog({
     super.key,
     required this.downloadFileOptions,
     this.loadingWidget,
     this.errorMessage,
+    this.logging,
     this.customDialogContent,
   });
 
@@ -60,6 +64,7 @@ class DownloadFileDialog extends StatelessWidget {
     return BlocProvider(
       create: (_) => DownloadFileCubit(
         downloadFileOptions: downloadFileOptions,
+        logging: logging,
       ),
       child: BlocListener<DownloadFileCubit, DownloadFileState>(
         listener: (context, state) {

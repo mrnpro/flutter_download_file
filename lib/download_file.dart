@@ -32,16 +32,20 @@ class DownloadFile {
   ///
   /// The [errorMessage] is displayed if an error occurs
   /// If no text is passed it will use the default one
+  /// 
+  /// Pass [logging] as true to show the logs for the performed request
   static Future<void> downloadAndSafeFile({
     required DownloadFileOptions downloadFileOptions,
     required BuildContext context,
     String? errorMessage,
     Widget? loadingWidget,
     Widget? customDialogContent,
+    bool? logging,
   }) async {
     showDialog(
       context: context,
       builder: (_) => DownloadFileDialog(
+        logging: logging,
         customDialogContent: customDialogContent,
         errorMessage: errorMessage,
         loadingWidget: loadingWidget,
