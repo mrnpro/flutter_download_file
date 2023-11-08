@@ -7,9 +7,16 @@ class DownloadFileApi {
   Future<void> downloadFile({
     required String downloadUrl,
     required String savePath,
+    Map<String, dynamic>? headers,
   }) async {
     Dio dio = Dio();
 
-    await dio.download(downloadUrl, savePath);
+    await dio.download(
+      downloadUrl,
+      savePath,
+      options: Options(
+        headers: headers,
+      ),
+    );
   }
 }
