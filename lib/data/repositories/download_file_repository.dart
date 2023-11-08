@@ -22,6 +22,7 @@ class DownloadFileRepository {
 
     await _downloadFileApi.downloadFile(
       downloadUrl: downloadFileOptions.downloadUrl,
+      headers: downloadFileOptions.headers,
       savePath: completeSavePath,
     );
 

@@ -1,39 +1,61 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+Need to download a file and open it in Flutter?🌐
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+No problem, with this flutter package it is done in a few lines.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
-
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
+# Getting started 🚀
+Just simply add the `download_file` package to your dependencies:
+```yaml
+dependencies:
+  download_file: <Newest version>
 ```
 
-## Additional information
+## Download a file ⬇️
+```dart
+DownloadFile.downloadAndSafeFile(
+              downloadFileOptions: DownloadFileOptions(
+                downloadUrl: 'https://jsonplaceholder.typicode.com/todos/1',
+                fileName: 'todo.json',
+              ),
+              context: context,
+            );
+```
+To download a file just use the `DownlaodFile.downloadAndSafeFile()` method. Here you need to pass the current `context` and a `DownloadFileOptions` with a `downloadUrl` ('https://jsonplaceholder.typicode.com/todos/1') and a `fileName` ('todo.json') how the file should be saved as. 
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+## DownloadFileOptions 💾
+While you can pass a `downloadUrl` and a `fileName` as described above, you can additionally add a `customSavePath`. This can for example be "users/images". This will save the file into the "users/images/[fileName]" directory.
+
+```dart
+DownloadFileOptions(
+                downloadUrl: 'https://jsonplaceholder.typicode.com/todos/1',
+                fileName: 'todo.json',
+                customSavePath: 'user/todos'
+              ),
+```
+
+## Custom widgets 🚧
+To modify the appearance of the widget, you can pass the following parameters:
+```dart
+DownloadFile.downloadAndSafeFile(
+              downloadFileOptions: DownloadFileOptions(
+                downloadUrl: 'https://jsonplaceholder.typicode.com/todos/1',
+                fileName: 'todo.json',
+                customSavePath: 'users/todos'
+              ),
+              context: context,
+              errorMessage: 'This is an example error message...',
+              loadingWidget: CustomLoadingWidget()
+            );
+```
+
+## Setup method (optional) ⚒️
+You can also modify the default values of the package, so you don't have to pass them manually everytime. Just use the `DownloadFile.setup()` method in your main method for that.
+```dart
+void main() {
+  DownloadFile.setup(
+    defaultErrorMessage: 'This is an example error message...',
+    defaultLoadingWidget: CustomLoadingWidget(),
+  );
+
+  runApp(const MyApp());
+}
+```

@@ -21,9 +21,12 @@ class DownloadFileOptions {
   /// it will be automatically generated from the [fileName]
   final String? customSavePath;
 
+  /// Headers that can be passed and will be used for the request
+  final Map<String, dynamic>? headers;
+
   /// The final generated save path that should be used after the application documents directory
   /// to save the file
-  /// 
+  ///
   /// If the [customSavePath] is not null it will check if the last character is a "/"
   /// to handle and prevent errors
   /// [customSavePath] is "users/images/" will be returned as "users/images/[fileName]"
@@ -45,6 +48,7 @@ class DownloadFileOptions {
     required this.downloadUrl,
     required this.fileName,
     this.customSavePath,
+    this.headers,
   });
 
   DownloadFileOptions copyWith({
