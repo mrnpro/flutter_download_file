@@ -9,8 +9,10 @@ class DownloadFileCubit extends Cubit<DownloadFileState> {
   final DownloadFileRepository _downloadFileRepository =
       DownloadFileRepository();
   final DownloadFileOptions downloadFileOptions;
+  final bool? logging;
   DownloadFileCubit({
     required this.downloadFileOptions,
+    this.logging,
   }) : super(DownloadFileLoading()) {
     _downloadAndOpenFile();
   }
@@ -21,6 +23,7 @@ class DownloadFileCubit extends Cubit<DownloadFileState> {
     try {
       await _downloadFileRepository.downloadAndOpenFile(
         downloadFileOptions: downloadFileOptions,
+        logging: logging,
       );
 
       emit(DownloadFileSuccess());

@@ -13,6 +13,7 @@ class DownloadFileRepository {
   /// Download and automatically open the file from the given [DownloadFileOptions]
   Future<void> downloadAndOpenFile({
     required DownloadFileOptions downloadFileOptions,
+    bool? logging,
   }) async {
     final Directory applicationDocumentsDirectory =
         await getApplicationDocumentsDirectory();
@@ -24,6 +25,7 @@ class DownloadFileRepository {
       downloadUrl: downloadFileOptions.downloadUrl,
       headers: downloadFileOptions.headers,
       savePath: completeSavePath,
+      logging: logging,
     );
 
     await OpenFilex.open(completeSavePath);

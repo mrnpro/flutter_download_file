@@ -16,6 +16,7 @@ class DownloadFileExamplePage extends StatelessWidget {
                 downloadUrl: 'https://jsonplaceholder.typicode.com/todos/1',
                 fileName: 'todo.json',
               ),
+              logging: true,
               context: context,
             );
           },
