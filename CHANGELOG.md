@@ -7,3 +7,5 @@ Official release of the first version
 Release adjustments for the package
 
 ## Added headers options to DownloadOptions (1.0.2) 💬
+
+## Added logging functionality (1.2.0) 🆎
